@@ -165,7 +165,7 @@ if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 // ===================== SCROLL REVEAL ANIMATION =====================
 const revealElements = document.querySelectorAll(
-  ".reveal-left, .reveal-right, .reveal-up"
+  ".reveal-left, .reveal-right, .reveal-up, .reveal-group"
 );
 
 const revealOnScroll = () => {
