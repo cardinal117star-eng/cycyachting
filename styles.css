@@ -2,7 +2,7 @@
 /*  ERIC PEARSON SAILING – FINAL CLEAN CSS       */
 /*  Fully organised, no duplicates, mobile-ready  */
 /* ============================================= */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap");
 :root {
   --blue: #062f4f;
   --blue-light: #0d4f7c;
@@ -15,11 +15,23 @@
   --bg-light: #e9ecef;
   --max-width: 1100px;
 
-  /* Nautical port & starboard from your logo */
-  --port: #8b0000;
-  --port-light: #c41e3a;
-  --starboard: #0b5f3f;
-  --starboard-light: #2d8659;
+  /* Nautical port & starboard logo */
+  --port: #e30613;
+  --port-light: #ff2b38;
+  --starboard: #00994c;
+  --starboard-light: #00cc66;
+  --black: #000000;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  max-width: 100vw;
 }
 
 *,
@@ -36,7 +48,7 @@ html {
 
 body {
   font-family: "Rajdhani", sans-serif;
-  color: var(--silver-dark);
+  color: var(--black);
   background: var(--white);
   line-height: 1.7;
   overflow-x: hidden;
@@ -61,7 +73,7 @@ h2,
 h3,
 h4 {
   font-family: "Rajdhani", serif;
-  color: var(--blue);
+  color: var(--black);
 }
 
 h1 {
@@ -71,13 +83,65 @@ h1 {
   text-shadow: 3px 0 9px #000000ff, 2px 2px 2px #707070;
   letter-spacing: -1px;
   line-height: 1.5;
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+h2 {
+  font-size: clamp(2.6rem, 6vw, 3.8rem);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 6px;
+  background: linear-gradient(to right, var(--port), var(--starboard));
+  margin: 20px auto 0;
+  border-radius: 3px;
 }
 
 .text-highlight {
   color: var(--starboard-light);
+  text-align: left;
+  align-self: flex-start;
 }
 .hero-text {
   text-shadow: 3px 0 9px #000000ff, 2px 2px 2px #707070;
+  text-align: left;
+  align-self: flex-start;
+}
+
+/* Logo text styles – Port & Starboard variants */
+.logo-text {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  color: black !important; 
+}
+
+.logo-text.port {
+  color: var(--port) !important;
+}
+
+.logo-text.starboard {
+  color: var(--starboard) !important;
+}
+
+.logo-text.large {
+  font-size: 3rem;
+}
+
+.logo-text:hover {
+  opacity: 0.85;
+  transform: scale(1.02);
 }
 
 .section-header {
@@ -121,7 +185,7 @@ header.topbar {
 }
 /* Logo in topbar */
 .logo-img {
-  height: 68px;
+  height: 50px;
   width: auto;
 }
 
@@ -313,7 +377,7 @@ header.topbar {
     color: var(--blue);
   }
   .logo img {
-    height: 58px;
+    height: 30px;
     width: auto;
     object-fit: contain;
     opacity: 0.85;
@@ -332,11 +396,159 @@ header.topbar {
     url("./LargeYacht.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
+  text-align: left;
   color: white;
   padding: 0 5%;
 }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px; /* Perfect spacing between buttons */
+}
+
+.hero-content .btn {
+  min-width: 260px;
+  padding: 18px 48px;
+  font-size: 1.2rem;
+}
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+  font-weight: 600; /* semi-bold like your site */
+  font-size: 0.9375rem; /* text-sm ≈ 15px */
+  line-height: 1;
+  height: 44px; /* h-10 = 40px + padding → 44px feels perfect */
+  padding: 0 28px; /* px-6 ≈ 28px */
+  border-radius: 9999px; /* rounded-full */
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+.btn:hover {
+  background: white;
+  color: var(--blue); /* dark blue text when filled */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+.btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+.secondary:hover {
+  background: white;
+  color: var(--port);
+}
+
+/* Perfect Tailwind-like white-outline button (used for "Get a Quote" and any future buttons) */
+.btn-modern-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Increased gap for more space */
+  white-space: nowrap;
+  font-weight: 600; /* semi-bold like your site */
+  font-size: 1.125rem; /* Same size as btn-hero-red */
+  line-height: 1.2; /* Same line height as btn-hero-red */
+  height: 56px; /* Same height as btn-hero-red */
+  padding: 0 40px; /* Same padding as btn-hero-red */
+  border-radius: 9999px; /* rounded-full */
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  margin-top: 20px; /* Added margin to push it down on mobile */
+}
+
+/* Hover + Focus states */
+.btn-modern-outline:hover {
+  background: white;
+  color: var(--blue); /* dark blue text when filled */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+}
+
+.btn-modern-outline:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Disabled state (if you ever need it) */
+.btn-modern-outline:disabled,
+.btn-modern-outline.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Optional: make SVG icons inside behave nicely */
+.btn-modern-outline svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.btn-hero-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* gap-2 */
+  white-space: nowrap;
+  font-weight: 600; /* font-semibold */
+  font-size: 1.125rem; /* text-lg ≈ 18px */
+  line-height: 1.2;
+  height: 56px; /* h-14 = 56px */
+  padding: 0 40px; /* px-10 ≈ 40px */
+  border-radius: 9999px; /* rounded-full */
+  background: var(--port); /* bg-port */
+  color: white; /* text-white */
+  box-shadow: 0 12px 30px rgba(227, 6, 19, 0.4); /* shadow-button */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+/* Hover state */
+.btn-hero-red:hover {
+  background: var(--port-light); /* hover:bg-port-light */
+  transform: translateY(-4px); /* hover:-translate-y-1 */
+  box-shadow: 0 20px 40px rgba(227, 6, 19, 0.5);
+}
+
+/* Focus accessibility */
+.btn-hero-red:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(227, 6, 19, 0.4);
+}
+
+/* If you ever disable it */
+.btn-hero-red:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Icons inside the button */
+.btn-hero-red svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .hero-content h1 {
   font-size: clamp(2.8rem, 10vw, 5rem);
   font-weight: 900;
@@ -350,26 +562,6 @@ header.topbar {
   opacity: 0.95;
 }
 
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 16px 42px;
-  border-radius: 50px;
-  background: var(--port);
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
-  box-shadow: 0 12px 30px rgba(6, 47, 79, 0.3);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn:hover {
-  background: var(--port-light);
-  color: white;
-  transform: translateY(-6px);
-  box-shadow: 0 0 18px 40px var(--port-light);
-}
-
 /* ============================================= */
 /*  SECTIONS                                     */
 /* ============================================= */
@@ -380,6 +572,7 @@ header.topbar {
 .contact,
 .credentials {
   padding: 100px 5%;
+  background: white;
 }
 .intro {
   background: var(--bg-light);
@@ -402,54 +595,249 @@ header.topbar {
 }
 
 /* Course cards */
-.course-grid {
+/* SIGNATURE SERVICES – B&W BACKGROUND + CHECKMARKS */
+.services {
+  padding: 100px 5%;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    /* Dark overlay for readability */ url("./background-profile.jpg")
+      center/cover no-repeat fixed; /* Your B&W image */
+  background-attachment: fixed; /* Parallax-like scroll from C2C hero */
+  color: white;
+}
+.services .container {
+  position: relative;
+  z-index: 2;
+}
+.services h2 {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* Display 4 cards in a row on desktop */
   gap: 32px;
   margin-top: 50px;
 }
-.course-card {
-  background: linear-gradient(135deg, var(--bg-light), white);
-  color: black;
-  padding: 34px 24px;
-  border-radius: 20px;
+.service-card {
+  background: rgba(255, 255, 255, 0.97);
+  color: var(--blue);
+  padding: 48px 32px;              /* much more internal space */
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-}
-.course-card h3 {
-  color: var(--port);
-}
-.course-card i {
-  font-size: 3rem;
-  margin-bottom: 18px;
-  color: var(--starboard);
-  width: 70px;
-  height: 70px;
-  border: 2px solid transparent;
-  border-radius: 50%;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+  transition: all 0.4s ease;
+  height: 100%;                    /* makes all cards same height */
   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.service-card i {
+  font-size: 4rem;
+  color: var(--starboard);
+  margin-bottom: 28px;
+}
+.service-card h3 {
+  color: var(--port);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 100px 5%;
+    background-attachment: scroll;   /* fixes performance */
+  }
+  
+  .services-grid {
+    gap: 48px 24px;                  /* even more vertical space */
+  }
+  
+  .service-card {
+    padding: 56px 36px;              /* feels luxurious on phones */
+    border-radius: 28px;
+  }
+  
+  .service-card i {
+    font-size: 4.5rem;
+    margin-bottom: 32px;
+  }
+  
+  .service-card h3 {
+    font-size: 1.7rem;
+  }
+  
+  .checkmark-list li {
+    font-size: 1.1rem;
+    padding-left: 36px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 64px 40px;
+  }
+
+  .service-card i {
+    font-size: 5rem;
+  }
+}
+
+.checkmark-list {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+}
+.checkmark-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 8px;
+  color: var(--silver-dark);
+}
+.checkmark-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--starboard-light);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+/* HERO CTA – C2C-STYLE SECONDARY BUTTON */
+.btn.secondary {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  transition: border-color 0.3s ease;
+  gap: 10px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  height: 56px;
+  padding: 0 40px;
+  border-radius: 9999px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
 }
-.course-card:hover {
-  transform: translateY(-14px);
-  border-color: var(--port-light);
-  box-shadow: 0 20px 40px rgba(139, 0, 0, 0.15);
+
+.btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25);
 }
-.course-card:hover i {
-  border-color: var(--port-light);
+
+.btn.secondary:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+.btn.secondary:disabled,
+.btn.secondary.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.get-quote-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.2;
+  height: 56px;
+  padding: 0 40px;
+  border-radius: 9999px;
+  border: 2px solid black; /* Changed to black outline */
+  background: transparent;
+  color: white;
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.15);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+.get-quote-btn:hover {
+  background: var(--starboard); /* No background change */
+  text-decoration: solid;
+  color: white !important; /* Change text color to port red */
+  border: 2px solid transparent; /* Remove black outline on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.25);
+}
+
+.get-quote-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.3);
+}
+
+/* FOOTER CAPTAIN'S LOG – C2C BLOG TEASER */
+.captains-log {
+  flex: 1;
+  min-width: 300px;
+  text-align: right;
+  padding: 20px 0;
+}
+.captains-log h4 {
+  margin-bottom: 8px;
+  color: var(--starboard);
+}
+.captains-log a:hover {
+  color: var(--port-light);
+  text-decoration: underline;
+}
+
+/* Mobile tweaks for new elements */
+@media (max-width: 960px) {
+  .services {
+    background-attachment: scroll; /* Disable parallax on mobile for performance */
+  }
+  .checkmark-list li {
+    padding-left: 20px;
+    font-size: 0.95rem;
+  }
+  .captains-log {
+    text-align: center;
+    min-width: auto;
+    order: -1; /* Move to top on mobile */
+  }
 }
 
 /* Slider */
 .slider-section {
-  padding: 110px 0;
-  background: var(--bg-light);
-  text-align: center;
+  padding: 120px 5%;
+  background: var(--blue);
+  color: white;
 }
 
 .slider-section h3 {
@@ -457,6 +845,15 @@ header.topbar {
   margin-bottom: 10px;
   color: var(--white);
 }
+
+.slider-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px; /* Increased bottom gap */
+  color: var(--white);
+  text-align: center; /* Center align text */
+  font-family: "Rajdhani", sans-serif; /* Set font to Rajdhani */
+}
+
 .slider-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -490,17 +887,17 @@ header.topbar {
   left: 0;
   right: 0;
   padding: 40px 30px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+  background: linear-gradient(transparent, rgba(6, 47, 79, 0.95));
   color: white;
 }
 .slider-nav button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--port);
-  backdrop-filter: blur(6px);
+  background: transparent;
+  backdrop-filter: blur(1px);
   color: white;
-  border: none;
+  border: 2px solid white;
   width: 68px;
   height: 68px;
   border-radius: 50%;
@@ -515,8 +912,8 @@ header.topbar {
   right: 20px;
 }
 .slider-nav button:hover {
-  background: var(--port-light);
-  color: var(--white);
+  background: white;
+  color: var(--blue);
 }
 
 /* Testimonials */
@@ -555,6 +952,14 @@ header.topbar {
   overflow-wrap: break-word;
 }
 
+.testimonials h2 {
+  font-size: 3rem;
+  margin-bottom: 20px; /* Increased bottom gap */
+  color: var(--black);
+  text-align: center; /* Center align text */
+  font-family: "Rajdhani", sans-serif; /* Set font to Rajdhani */
+}
+
 .testimonial .who {
   font-weight: 700;
   color: var(--port-light);
@@ -581,19 +986,6 @@ header.topbar {
   background: var(--port-light);
   transform: translateY(-3px);
 }
-
-/* @media (max-width: 640px) {
-  .test-nav {
-    margin-top: 20px;
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-  }
-  .testimonials-button {
-    padding: 12px 28px;
-    font-size: 1rem;
-  }
-} */
 
 /* Credentials */
 .doc-grid {
@@ -735,8 +1127,8 @@ footer {
   transition: all 0.3s;
 }
 .socials a:hover {
-  background: var(--gold);
-  color: var(--blue);
+  background: var(--port);
+  color: var(--black);
   transform: translateY(-5px);
 }
 
@@ -794,7 +1186,7 @@ footer {
   transition-delay: 0.5s;
 }
 .hero-content.active .btn {
-  transition-delay: 0.8s;
+  transition-delay: 0.1s;
 }
 
 /* Wave divider */

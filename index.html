@@ -12,7 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <link rel="stylesheet" href="./styles.css?v=2">
+    <link rel="stylesheet" href="./styles.css?v=3">
 </head>
 
 <body>
@@ -20,8 +20,9 @@
     <header class="topbar" id="topbar">
         <div class="container topbar-inner">
             <!-- Logo -->
-            <a href="#" class="logo">
-                <img src="LogoC2C.jpg" alt="Eric Pearson Sailing" class="logo-img">
+            <a href="#" class="logo-text">
+                <!-- <img src="LogoC2C.jpg" alt="Eric Pearson Sailing" class="logo-img"> -->
+                <span class="logo-text port">C</span>2<span class="logo-text starboard">C</span>Yachting
             </a>
 
             <!-- Desktop Navigation -->
@@ -45,7 +46,7 @@
                             <a href="./documents/SY Happy Days Reference.pdf" target="_blank">S:Y Happy Days</a>
                         </div>
                         <div class="dropdown-footer">
-                            <a href="./credentials.html#credentials" class="view-all">View All Credentials</a>
+                            <a href="./credentials.html" class="view-all">View All Credentials</a>
                         </div>
                     </div>
                 </div>
@@ -53,6 +54,9 @@
                 <a href="#course-details">Deliveries</a>
                 <a href="#lessons">Tuition</a>
                 <a href="#contact">Contact</a>
+                <a href="#contact" class="get-quote-btn">
+                    Get a Quote
+                </a>
 
                 <!-- Hamburger Icon (only visible on mobile) -->
                 <div class="hamburger" id="mobileToggle">
@@ -89,12 +93,23 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-content container active">
-            <p class="hero-text">Welcome Aboard</p>
-            <h1>Learn To Sail With <br> <span class="text-highlight">Eric Pearson</span></h1>
+            <p class="hero-text">Gold Coast, Australia</p>
+            <h1>Yacht Delivery <br>
+                 Seamanship Training <br>
+                VIP Guest Services</h1>
             <br>
+            <div class="hero-buttons">
 
-            <a href="#contact" class="btn">Book Your Lesson</a>
+                <!-- RED BUTTON – EXACTLY LIKE THE IMAGE -->
+                <a href="#contact" class="btn-hero-red">
+                    Book Your Lesson
+                </a>
 
+                <!-- GREEN BUTTON – same size & style, just green -->
+                <a href="#contact" class="btn-modern-outline">
+                    Chart Your Voyage
+                </a>
+            </div>
         </div>
     </section>
 
@@ -108,34 +123,51 @@
         </div>
     </section>
 
-    
 
-    <!-- WHAT YOU'LL LEARN -->
-    <section class="course-details reveal-right" id="course-details">
+
+    <!-- SIGNATURE SERVICES -->
+    <section class="services reveal-right" id="course-details">
         <div class="container">
-            <h2 class="section-header-green">What You'll Learn</h2>
-            <div class="course-grid">
-                <div class="course-card">
+            <h2 class="section-header-green">Signature Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
                     <i class="fas fa-ship"></i>
                     <h3>Boat Handling & Docking</h3>
-                    <p>Close-quarters maneuvering, spring lines, wind-aware docking & departure</p>
+                    <ul class="checkmark-list">
+                        <li>Close-quarters maneuvering</li>
+                        <li>Spring lines & wind-aware docking</li>
+                        <li>Safe departure techniques</li>
+                    </ul>
                 </div>
-                <div class="course-card">
+                <div class="service-card">
                     <i class="fas fa-compass"></i>
                     <h3>Navigation & Passage Planning</h3>
-                    <p>Charts, GPS, tides, weather routing and night navigation</p>
+                    <ul class="checkmark-list">
+                        <li>Charts, GPS, & tides</li>
+                        <li>Weather routing & night navigation</li>
+                        <li>Coastal voyage planning</li>
+                    </ul>
                 </div>
-                <div class="course-card">
+                <div class="service-card">
                     <i class="fas fa-wind"></i>
                     <h3>Wind & Sail Trim</h3>
-                    <p>Reefing, sail shape and extracting performance from your rig</p>
+                    <ul class="checkmark-list">
+                        <li>Reefing & sail shape optimization</li>
+                        <li>Performance extraction from your rig</li>
+                        <li>Apparent wind mastery</li>
+                    </ul>
                 </div>
-                <div class="course-card">
+                <div class="service-card">
                     <i class="fas fa-life-ring"></i>
                     <h3>Safety & Emergency</h3>
-                    <p>Man overboard, VHF, fire management and emergency procedures</p>
+                    <ul class="checkmark-list">
+                        <li>Man overboard recovery</li>
+                        <li>VHF procedures & fire management</li>
+                        <li>Emergency protocols</li>
+                    </ul>
                 </div>
             </div>
+            <a href="#contact" class="btn" style="margin-top: 60px; display: inline-block;">Chart Your Voyage</a>
         </div>
     </section>
 
@@ -216,8 +248,8 @@
     <!-- CONTACT -->
     <section class="contact reveal-right" id="contact">
         <div class="container">
-            <h2>Contact Eric Pearson</h2>
-            <p class="contact-info">Western Australia<br>
+            <h2>Contact <span class="logo-text port large">C</span>2<span class="logo-text starboard large">C</span>Yachting</h2>
+            <p class="contact-info">Gold Coast, Australia<br>
                 Email: <b>eric@pearson-sailing.com.au</b> · Phone: <b>+61 400 123 456</b>
             </p>
             <form action="https://formspree.io/f/YOUR_ID" method="POST">
@@ -233,9 +265,9 @@
     <footer>
         <div class="container" style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:40px;">
             <div class="footer-brand">
-                <div style="font-size:1.8rem; font-weight:900; color:white; margin-bottom:8px;">Eric Pearson Sailing
+                <div style="font-size:1.8rem; font-weight:900; color:white; margin-bottom:8px;"><span class="logo-text port">C</span>2<span class="logo-text starboard">C</span>Yachting
                 </div>
-                <p style="max-width:360px; opacity:0.9;">Private yacht instruction & coaching across Western Australia.
+                <p style="max-width:360px; opacity:0.9;">Private yacht instruction & coaching across Gold Coast, Australia.
                     Confidence, competence, calm on the water.</p>
                 <div class="socials" style="margin-top:16px;">
                     <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
