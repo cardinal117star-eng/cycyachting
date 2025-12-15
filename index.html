@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="./styles.css?v=4">
+    <link rel="preload" as="video" href="./media/advanced_sailing.mp4">
+    <link rel="preload" as="video" href="./media/intro_vid.mp4">
 </head>
 
 <body>
@@ -119,8 +121,8 @@
     <!-- INTRO -->
     <section class="intro-split">
         <div class="intro-image">
-            <video autoplay muted loop playsinline>
-                <source src="./intro_vid.mp4" type="video/mp4">
+            <video autoplay muted loop playsinline loading="lazy">
+                <source src="./media/intro_vid.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -216,16 +218,16 @@
             <div class="slider-container">
                 <div class="slides" id="slides">
                     <div class="slide-item">
-                        <img src="yach-on-ocean.jpg" alt="Turquoise waters">
+                        <img src="./media/yach-on-ocean.webp" alt="Turquoise waters">
                         <div class="slide-caption">
                             <h3>Beginner Sailing</h3>
                             <p>From never-sailed to confident helming.</p>
                         </div>
                     </div>
                     <div class="slide-item">
-                        <video autoplay muted loop playsinline>
-                            <source src="./advanced_sailing.mp4" type="video/mp4">
-                            <img src="base-yacht.jpg" alt="Advanced Motor Yacht Handling"> <!-- fallback image -->
+                        <video autoplay muted loop playsinline loading="lazy">
+                            <source src="./media/advanced_sailing.mp4" type="video/mp4">
+                            <img src="./media/base-yacht.webp" alt="Advanced Motor Yacht Handling"> <!-- fallback image -->
                         </video>
                         <div class="slide-caption">
                             <h3>Advanced Sailing</h3>
@@ -233,7 +235,7 @@
                         </div>
                     </div>
                     <div class="slide-item">
-                        <img src="YachtImg2.jpeg"Yacht handling">
+                        <img src="./media/YachtImg2.webp" Yacht handling">
                         <div class="slide-caption">
                             <h3>Advanced Motor Yacht Handling</h3>
                             <p>Precision docking, passage planning and weather predicting.</p>
@@ -300,7 +302,7 @@
             <div class="team-grid">
                 <div class="team-card">
                     <div class="porthole">
-                        <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank"><img src="Eric_Pearson.jpeg"
+                        <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank"><img src="./media/Eric_Pearson.webp"
                                 alt="Eric Pearson"></a>
                     </div>
                     <h3>Eric Pearson</h3>
@@ -309,8 +311,8 @@
 
                 <div class="team-card">
                     <div class="porthole">
-                        <a href="./documents/Alexander Chase Meares Yacht CV.pdf" target="_blank"><img src="Alexander Chasē Mearse.jpeg"
-                                alt="John Smith"></a>
+                        <a href="./documents/Alexander Chase Meares Yacht CV.pdf" target="_blank"><img
+                                src="./media/Alexander Chasē Mearse.webp" alt="John Smith"></a>
                     </div>
                     <h3>Alexander Chasē Mearse</h3>
 
@@ -318,7 +320,8 @@
 
                 <div class="team-card">
                     <div class="porthole">
-                        <a href="./documents/Jordan_Pearson_CV.jpeg" target="_blank"><img src="Jordan_Pearson.jpeg" alt="Sarah Lee"></a>
+                        <a href="./documents/Jordan_Pearson_CV.jpeg" target="_blank"><img src="./media/Jordan_Pearson.webp"
+                                alt="Sarah Lee"></a>
                     </div>
                     <h3>Jordan Pearson</h3>
 

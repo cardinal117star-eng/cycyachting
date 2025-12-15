@@ -597,7 +597,7 @@ header.topbar {
   height: 100vh;
   min-height: 680px;
   background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
-    url("./YachtImg1.jpeg") center/cover no-repeat;
+    url("./media/YachtImg1.webp") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start; /* pushes everything left */
@@ -1027,7 +1027,7 @@ header.topbar {
 .services {
   padding: 100px 5%;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
-    /* Dark overlay for readability */ url("./background-profile.jpg")
+    /* Dark overlay for readability */ url("./media/background-profile.webp")
       center/cover no-repeat fixed; /* Your B&W image */
   background-attachment: fixed; /* Parallax-like scroll from C2C hero */
   color: white;
@@ -1430,7 +1430,7 @@ header.topbar {
 .team-section {
   padding: 120px 5%;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
-    url("./SailingYacht.jpeg") center/cover no-repeat fixed;
+    url("./media/SailingYacht.webp") center/cover no-repeat fixed;
   background-attachment: fixed;
   color: white;
   text-align: center;
