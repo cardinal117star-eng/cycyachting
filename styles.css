@@ -72,6 +72,10 @@ h4 {
   color: var(--black);
 }
 
+.small {
+  font-size: 1.8rem;
+}
+
 h1 {
   font-family: "Rajdhani", sans-serif; /* you wanted Open Sans for hero */
   font-weight: 400;
@@ -590,8 +594,8 @@ header.topbar {
 .hero {
   height: 100vh;
   min-height: 680px;
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
-    url("./LargeYacht.jpg") center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.45)),
+    url("./YachtImg1.jpeg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: flex-start; /* pushes everything left */
@@ -1416,8 +1420,16 @@ header.topbar {
 /* ============================================= */
 .team-section {
   padding: 120px 5%;
-  background: var(--bg-light);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+ url("./SailingYacht.jpeg")
+      center/cover no-repeat fixed; 
+  background-attachment: fixed; 
+  color: white;
   text-align: center;
+}
+
+.team-section p {
+  color: white;
 }
 
 .team-grid {
@@ -1467,7 +1479,7 @@ header.topbar {
 /* Name & Role */
 .team-card h3 {
   font-size: 1.6rem;
-  color: var(--blue);
+  color: var(--bg-light);
   margin-bottom: 8px;
   font-weight: 700;
 }
