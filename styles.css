@@ -767,9 +767,9 @@ header.topbar {
 .services-grid {
   display: grid;
   grid-template-columns: repeat(
-    4,
+    3,
     1fr
-  ); /* Display 4 cards in a row on desktop */
+  );
   gap: 32px;
   margin-top: 50px;
 }
