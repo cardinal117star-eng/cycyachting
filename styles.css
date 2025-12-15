@@ -605,12 +605,6 @@ header.topbar {
   color: white;
 }
 
-@media (max-width: 960px) {
-  .hero {
-    padding-left: 5%;
-  }
-}
-
 .hero-content {
   max-width: 820px; /* limits width so it doesn't stretch */
   width: 100%;
@@ -774,6 +768,20 @@ header.topbar {
   font-size: clamp(1.1rem, 4vw, 1.5rem);
   margin: 20px 0 32px;
   opacity: 0.95;
+}
+
+@media (max-width: 960px) {
+  .hero {
+    padding-left: 5%;
+  }
+  .hero-content h1 {
+    font-size: clamp(1.2rem, 9vw, 4rem);
+  }
+  .hero-content p {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    margin: 20px 0 0px;
+    
+  }
 }
 
 /* ============================================= */
@@ -1421,9 +1429,8 @@ header.topbar {
 .team-section {
   padding: 120px 5%;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
- url("./SailingYacht.jpeg")
-      center/cover no-repeat fixed; 
-  background-attachment: fixed; 
+    url("./SailingYacht.jpeg") center/cover no-repeat fixed;
+  background-attachment: fixed;
   color: white;
   text-align: center;
 }
