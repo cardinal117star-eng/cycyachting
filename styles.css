@@ -110,17 +110,78 @@ h2::after {
   text-align: left;
   align-self: flex-start;
 }
-
 /* Logo text styles – Port & Starboard variants */
 .logo-text {
-  font-family: "Rajdhani", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
   font-weight: 700;
-  font-size: clamp(1.4rem, 4vw, 2rem);
-  letter-spacing: 1px;
   text-decoration: none;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  color: black !important;
+}
+
+@media (max-width: 960px) {
+  /* Remove the left push on mobile */
+  .topbar .logo-text {
+    margin-left: 0 !important;
+  }
+
+  /* Center the logo and keep hamburger on the right */
+  .topbar-inner {
+    justify-content: space-between; /* keeps hamburger right */
+    padding: 0 -10%; /* consistent padding */
+  }
+
+  /* Optional: slightly smaller logo on mobile for breathing room */
+  .logo-text {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+}
+
+.logo-num {
+  margin: 0 8px; /* perfect space around the "2" */
+  font-size: 0.92em; /* slightly smaller for balance */
+  opacity: 0.95;
+}
+
+.logo-yachting {
+  margin-left: 14px; /* clean space before "Yachting" */
+  font-weight: 500;
+  font-size: 0.82em; /* slightly smaller and lighter */
+  letter-spacing: 1.5px;
+}
+
+/* Desktop – generous spacing */
+@media (min-width: 961px) {
+  .logo-text {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .logo-num {
+    margin: 0 12px;
+  }
+
+  .logo-yachting {
+    margin-left: 20px;
+    font-size: 0.78em;
+  }
+}
+
+/* Mobile – tighter but still beautiful */
+@media (max-width: 960px) {
+  .logo-text {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .logo-num {
+    margin: 0 0px;
+  }
+
+  .logo-yachting {
+    margin-left: 10px;
+    font-size: 0.85em;
+  }
 }
 
 .logo-text.port {
@@ -154,7 +215,148 @@ h2::after {
 /* ============================================= */
 /*  TOPBAR & NAVIGATION                          */
 /* ============================================= */
+/* ============================================= */
+/*  TOPBAR & NAVIGATION – ALWAYS VISIBLE + TRANSLUCENT → SOLID */
+/* ============================================= */
 header.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 45px 0%;
+  background: transparent;
+  z-index: 1200;
+  transition: all 0.4s ease;
+}
+
+.black {
+  color: black !important;
+}
+
+.black:hover {
+  color: var(--port-light) !important;
+}
+
+/* When scrolled → solid white */
+.topbar.scrolled {
+  padding: 16px 5%;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+}
+
+.topbar-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar .logo-text {
+  margin-left: 0; /* no negative margin anywhere */
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  color: white; /* base for "Yachting" and plain text */
+  transition: color 0.4s ease;
+}
+
+/* TEXT COLOR – WHITE ON HERO, BLUE/BLACK WHEN SCROLLED */
+.topbar .nav-links a,
+.topbar .dropdown-toggle,
+.topbar .get-quote-btn {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.topbar .logo-text.port {
+  color: var(--port) !important; /* red C stays red */
+}
+.topbar .logo-text.starboard {
+  color: var(--starboard) !important; /* green C stays green */
+}
+
+/* WHEN SCROLLED – SWITCH TO DARK */
+.topbar.scrolled .nav-links a,
+.topbar.scrolled .dropdown-toggle,
+.topbar.scrolled .get-quote-btn {
+  color: var(--blue);
+}
+
+.topbar.scrolled .logo-text {
+  color: black;
+}
+.topbar.scrolled .logo-text.port {
+  color: var(--port) !important;
+}
+.topbar.scrolled .logo-text.starboard {
+  color: var(--starboard) !important;
+}
+
+/* Get a Quote button – white outline on hero, blue when scrolled */
+.topbar .get-quote-btn {
+  border: 2px solid white;
+}
+
+.topbar.scrolled .get-quote-btn {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.topbar.scrolled .get-quote-btn:hover {
+  background: var(--blue);
+  color: white;
+}
+
+@media (max-width: 960px) {
+  .topbar-inner {
+    padding-left: 0%;
+    padding-right: 5%;
+    justify-content: center; /* centers logo */
+    gap: 20px;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 5%;
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  .topbar.scrolled .hamburger {
+    color: var(--blue);
+  }
+
+  .topbar .logo-text {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+}
+
+/* LOCATION BAR – SUBTLE, BELOW NAVBAR */
+.location-bar {
+  position: fixed;
+  top: 90px; /* adjust based on your navbar height (~80-100px) */
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 1100;
+  pointer-events: none; /* doesn't block clicks */
+  transition: opacity 0.5s ease;
+  text-align: center;
+}
+
+.location-bar p {
+  text-shadow: 3px 0 9px #000000ff, 2px 2px 2px #707070;
+  color: white;
+  text-align: left;
+  align-self: flex-start;
+}
+
+/* Fade out when scrolled */
+.location-bar.fade-out {
+  opacity: 0;
+}
+
+/* header.topbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -179,11 +381,11 @@ header.topbar {
   justify-content: space-between;
   align-items: center;
 }
-/* Logo in topbar */
+
 .logo-img {
   height: 50px;
   width: auto;
-}
+} */
 
 /* Desktop navigation */
 .nav-links {
@@ -387,21 +589,34 @@ header.topbar {
 /* ============================================= */
 .hero {
   height: 100vh;
-  min-height: 580px;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+  min-height: 680px;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
     url("./LargeYacht.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-start; /* pushes everything left */
+  padding-left: 12%; /* extra left margin for breathing room */
+  padding-right: 9%;
   text-align: left;
   color: white;
-  padding: 0 5%;
 }
+
+@media (max-width: 960px) {
+  .hero {
+    padding-left: 5%;
+  }
+}
+
 .hero-content {
+  max-width: 820px; /* limits width so it doesn't stretch */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 24px; /* Perfect spacing between buttons */
+  align-items: flex-start; /* left-align all children */
+  justify-content: center;
+  gap: 36px;
+  text-align: left;
+  margin-left: 0; /* ensure no auto margin */
 }
 
 .hero-content .btn {
@@ -575,7 +790,7 @@ header.topbar {
   text-align: center;
 }
 
- /* Panels  */
+/* Panels  */
 .intro {
   background: var(--bg-light);
   text-align: center;
@@ -611,14 +826,27 @@ header.topbar {
   transform: translateX(0);
 }
 
-.reveal-group > *:nth-child(1) { transition-delay: 0.1s; }
-.reveal-group > *:nth-child(2) { transition-delay: 0.25s; }
-.reveal-group > *:nth-child(3) { transition-delay: 0.4s; }
-.reveal-group > *:nth-child(4) { transition-delay: 0.55s; }
-.reveal-group > *:nth-child(5) { transition-delay: 0.7s; }
-.reveal-group > *:nth-child(6) { transition-delay: 0.85s; }
-.reveal-group > *:nth-child(7) { transition-delay: 1s; }
-
+.reveal-group > *:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.reveal-group > *:nth-child(2) {
+  transition-delay: 0.25s;
+}
+.reveal-group > *:nth-child(3) {
+  transition-delay: 0.4s;
+}
+.reveal-group > *:nth-child(4) {
+  transition-delay: 0.55s;
+}
+.reveal-group > *:nth-child(5) {
+  transition-delay: 0.7s;
+}
+.reveal-group > *:nth-child(6) {
+  transition-delay: 0.85s;
+}
+.reveal-group > *:nth-child(7) {
+  transition-delay: 1s;
+}
 
 /* Headings */
 .intro h2 {
@@ -676,9 +904,19 @@ header.topbar {
   width: 100%;
   height: 100%;
   min-height: 480px;
-  background: url("./hero-yacht.jpg") center/cover no-repeat;
   border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+  overflow: hidden; /* ensures rounded corners clip the video */
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+.intro-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* same as background cover */
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* Right-side text panel – uses your existing panel style */
@@ -746,6 +984,31 @@ header.topbar {
   }
 }
 
+/* MOBILE: Center logo when navbar is mobile */
+@media (max-width: 960px) {
+  .topbar .logo-text {
+    margin-left: 0; /* removes the left push */
+    margin-right: auto; /* centers it with flex */
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .topbar-inner {
+    justify-content: center; /* centers logo + hamburger together */
+    gap: 20px; /* nice space between logo and hamburger */
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 5%; /* pushes hamburger to far right */
+    color: white; /* white on hero */
+    transition: color 0.3s ease;
+  }
+
+  .topbar.scrolled .hamburger {
+    color: var(--blue); /* turns blue/black when scrolled */
+  }
+}
+
 /* Course cards */
 /* SIGNATURE SERVICES – B&W BACKGROUND + CHECKMARKS */
 .services {
@@ -766,10 +1029,7 @@ header.topbar {
 }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  );
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-top: 50px;
 }
@@ -1014,6 +1274,18 @@ header.topbar {
   position: relative;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
+.slide-item video {
+  width: 100%;
+  height: clamp(280px, 65vh, 560px);
+  object-fit: cover;
+  display: block;
+}
+
+/* Fallback image inside video tag (for very old browsers) */
+.slide-item video + img {
+  display: none; /* hidden unless video fails */
+}
+
 .slides {
   display: flex;
   width: 100%;
@@ -1137,6 +1409,86 @@ header.topbar {
 .testimonials-button:hover {
   background: var(--port-light);
   transform: translateY(-3px);
+}
+
+/* ============================================= */
+/*  TEAM SECTION – PORTHOLE STYLE CIRCULAR PORTRAITS */
+/* ============================================= */
+.team-section {
+  padding: 120px 5%;
+  background: var(--bg-light);
+  text-align: center;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 60px 40px;
+  margin-top: 40px;
+  justify-items: center;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-12px);
+}
+
+.porthole {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8px solid #d4af37; /* gold/brass frame */
+  box-shadow: 0 0 0 4px #b08d2a,
+    /* inner brass ring */ 0 12px 30px rgba(0, 0, 0, 0.25); /* deep shadow for depth */
+  background: #062f4f; /* dark blue backup if image fails */
+  margin-bottom: 24px;
+}
+
+.porthole img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .porthole img {
+  transform: scale(1.08);
+}
+
+/* Name & Role */
+.team-card h3 {
+  font-size: 1.6rem;
+  color: var(--blue);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.team-card p {
+  font-size: 1.1rem;
+  color: var(--port);
+  font-weight: 600;
+}
+
+/* Mobile – extra space */
+@media (max-width: 640px) {
+  .porthole {
+    width: 180px;
+    height: 180px;
+    border: 6px solid #d4af37;
+  }
+
+  .team-grid {
+    gap: 50px;
+  }
 }
 
 /* Credentials */
@@ -1358,5 +1710,55 @@ footer {
     width: 60px;
     height: 60px;
     font-size: 1.8rem;
+  }
+}
+/* FLOATING WHATSAPP BUBBLE */
+.whatsapp-bubble {
+  text-decoration: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 64px;
+  height: 64px;
+  background: #25d366; /* Official WhatsApp green */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.whatsapp-bubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  background: #128c7e; /* Darker green on hover */
+}
+
+/* Subtle pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Mobile – slightly smaller */
+@media (max-width: 640px) {
+  .whatsapp-bubble {
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+    bottom: 20px;
+    right: 20px;
   }
 }

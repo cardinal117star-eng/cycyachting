@@ -2,9 +2,25 @@
 window.addEventListener("load", () => document.body.classList.add("loaded"));
 
 // Topbar on scroll
+// Navbar: translucent at top → solid white when scrolled
 const topbar = document.getElementById("topbar");
+
 window.addEventListener("scroll", () => {
-  topbar.classList.toggle("visible", window.scrollY > 300);
+  if (window.scrollY > 100) {           // change 100 to any value you like
+    topbar.classList.add("scrolled");
+  } else {
+    topbar.classList.remove("scrolled");
+  }
+});
+
+const locationBar = document.getElementById("locationBar");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    locationBar.classList.add("fade-out");
+  } else {
+    locationBar.classList.remove("fade-out");
+  }
 });
 
 // ==================== MAIN IMAGE SLIDER ====================

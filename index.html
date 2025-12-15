@@ -22,7 +22,8 @@
             <!-- Logo -->
             <a href="#" class="logo-text">
                 <!-- <img src="LogoC2C.jpg" alt="Eric Pearson Sailing" class="logo-img"> -->
-                <span class="logo-text port">C</span>2<span class="logo-text starboard">C</span>Yachting
+                <span><span class="logo-text port">C</span><span>2</span><span
+                        class="logo-text starboard">C</span>Yachting</span>
             </a>
 
             <!-- Desktop Navigation -->
@@ -35,18 +36,21 @@
                     <div class="dropdown-menu about-dropdown">
                         <div class="dropdown-section">
                             <h4>Professional Credentials</h4>
-                            <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank">Resume (PDF)</a>
-                            <a href="./documents/Eric_Pearson_Resume_Table.pdf" target="_blank">Resume Table (PDF)</a>
-                            <a href="./documents/MSI COC_EPearson 2025.pdf" target="_blank">Master Class 1 COC</a>
-                            <a href="./documents/Eric Pearson tickets.pdf" target="_blank">Tickets & Ratings</a>
+                            <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank" class="black">Resume
+                                (PDF)</a>
+                            <a href="./documents/MSI COC_EPearson 2025.pdf" target="_blank" class="black">Master Class 1
+                                COC</a>
+                            <a href="./documents/Eric Pearson tickets.pdf" target="_blank" class="black">Tickets &
+                                Ratings</a>
                         </div>
                         <div class="dropdown-section">
                             <h4>References</h4>
-                            <a href="./documents/MY Kokomo Reference.pdf" target="_blank">MY Kokomo</a>
-                            <a href="./documents/SY Happy Days Reference.pdf" target="_blank">S:Y Happy Days</a>
+                            <a href="./documents/MY Kokomo Reference.pdf" target="_blank" class="black">MY Kokomo</a>
+                            <a href="./documents/SY Happy Days Reference.pdf" target="_blank" class="black">S:Y Happy
+                                Days</a>
                         </div>
                         <div class="dropdown-footer">
-                            <a href="./credentials.html" class="view-all">View All Credentials</a>
+                            <a href="./credentials.html" class="view-all black">View All Credentials</a>
                         </div>
                     </div>
                 </div>
@@ -92,9 +96,9 @@
     <!-- HERO -->
     <section class="hero" id="hero">
         <div class="hero-content container active">
-            <p class="hero-text">Gold Coast, Australia</p>
+            <p class="hero-text" id="locationBar">Gold Coast, Australia</p>
             <h1>Power and Sail <br>
-                Deliveries and Tuition <br>
+                Deliveries/Tuition <br>
                 Personal and Professional</h1>
             <br>
             <div class="hero-buttons">
@@ -114,7 +118,12 @@
 
     <!-- INTRO -->
     <section class="intro-split">
-        <div class="intro-image"></div>
+        <div class="intro-image">
+            <video autoplay muted loop playsinline>
+                <source src="./intro_vid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
         <div class="intro-content panel reveal-group">
             <h1>Superyacht Standards for Every Vessel</h1>
@@ -207,10 +216,20 @@
             <div class="slider-container">
                 <div class="slides" id="slides">
                     <div class="slide-item">
-                        <img src="aerial-view-tranquil-turquoise-waters.png" alt="Turquoise waters">
+                        <img src="yach-on-ocean.jpg" alt="Turquoise waters">
                         <div class="slide-caption">
                             <h3>Beginner Sailing</h3>
                             <p>From never-sailed to confident helming.</p>
+                        </div>
+                    </div>
+                    <div class="slide-item">
+                        <video autoplay muted loop playsinline>
+                            <source src="./advanced_sailing.mp4" type="video/mp4">
+                            <img src="base-yacht.jpg" alt="Advanced Motor Yacht Handling"> <!-- fallback image -->
+                        </video>
+                        <div class="slide-caption">
+                            <h3>Advanced Sailing</h3>
+                            <p>Advanced sail handling and maneuvering techniques.</p>
                         </div>
                     </div>
                     <div class="slide-item">
@@ -220,14 +239,8 @@
                             <p>Precision docking, passage planning and weather predicting.</p>
                         </div>
                     </div>
-                    <div class="slide-item">
-                        <img src="yach-on-ocean.jpg" alt="Sunset charter">
-                        <div class="slide-caption">
-                            <h3>Advanced Sailing</h3>
-                            <p>Advanced sail handling and maneuvering techniques.</p>
-                        </div>
-                    </div>
                 </div>
+
                 <div class="slider-nav">
                     <button id="prevBtn" aria-label="Previous">‹</button>
                     <button id="nextBtn" aria-label="Next">›</button>
@@ -274,6 +287,46 @@
         </div>
     </section>
 
+    <section class="team-section reveal-up" id="team">
+        <div class="container">
+            <h2 style="font-size: 3rem; font-weight:900; margin-bottom:8px;">Meet The <span
+                    class="logo-text large port">C</span>2<span class="logo-text large starboard">C</span>Yachting Team
+            </h2>
+            <p style="text-align:center; max-width:800px; margin:60px auto 60px; font-size:1.6rem; color:#333;">
+                Our experienced captains and crew bring decades of superyacht expertise to every delivery and training
+                session.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="porthole">
+                        <a href="./documents/Eric Pearson Resume-7.pdf"><img src="Eric_Pearson.jpeg"
+                                alt="Eric Pearson"></a>
+                    </div>
+                    <h3>Eric Pearson</h3>
+
+                </div>
+
+                <div class="team-card">
+                    <div class="porthole">
+                        <a href="./documents/Alexander Chase Meares Yacht CV.pdf"><img src="Alexander Chasē Mearse.jpeg"
+                                alt="John Smith"></a>
+                    </div>
+                    <h3>Alexander Chasē Mearse</h3>
+
+                </div>
+
+                <div class="team-card">
+                    <div class="porthole">
+                        <a href="./documents/"><img src="Jordan_Pearson.jpeg" alt="Sarah Lee"></a>
+                    </div>
+                    <h3>Jordan Pearson</h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CONTACT -->
     <section class="contact reveal-right" id="contact">
         <div class="container">
@@ -315,7 +368,11 @@
             </div>
         </div>
     </footer>
-
+    <!-- FLOATING WHATSAPP BUBBLE -->
+    <a href="https://wa.me/61400123456?text=Hi%20Eric%2C%20I'd%20like%20to%20book%20a%20lesson%20or%20delivery"
+        class="whatsapp-bubble" target="_blank" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <script src="./script.js?v=2"></script>
 </body>
 
