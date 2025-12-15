@@ -508,9 +508,11 @@ header.topbar {
 .mobile-menu {
   position: fixed;
   top: 110px;
-  left: 0;
-  right: 0;
+  left: 5%;
+  right: 5%;
+  max-width: 400px;
   background: white;
+  border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   max-height: 0;
   overflow: hidden;
@@ -780,7 +782,6 @@ header.topbar {
   .hero-content p {
     font-size: clamp(1.2rem, 3vw, 1.5rem);
     margin: 20px 0 0px;
-    
   }
 }
 
