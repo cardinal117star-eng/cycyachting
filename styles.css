@@ -227,7 +227,7 @@ header.topbar {
   top: 0;
   left: 0;
   right: 0;
-  padding: 45px 0%;
+  padding: 45px 8% 0;
   background: transparent;
   z-index: 1200;
   transition: all 0.4s ease;
@@ -728,7 +728,7 @@ header.topbar {
 }
 
 .hero-content h1 {
-  font-size: clamp(2.8rem, 10vw, 5rem);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
   font-weight: 800;
   line-height: 1.1;
   margin: 16px 0;
@@ -788,16 +788,38 @@ header.topbar {
   transition-delay: 1.7s;
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1600px) {
+  .hero-content h1 {
+    font-size: clamp(2.5rem, 4.5vw, 3rem);
+  }
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.4rem, 7vw, 4rem);   /* prevents massive text */
+    line-height: 1.15;
+  }
+}
+
+@media (max-width: 700px) {
   .hero {
     padding-left: 5%;
+    padding-right: 5%;
   }
+
   .hero-content h1 {
-    font-size: clamp(1.2rem, 9vw, 4rem);
+    font-size: clamp(2rem, 8vw, 3.5rem);
   }
-  .hero-content p {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    margin: 20px 0 0px;
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 }
 
