@@ -269,7 +269,7 @@ header.topbar {
 .topbar .dropdown-toggle,
 .topbar .get-quote-btn {
   color: white;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease;
 }
 
 .topbar .logo-text.port {
@@ -281,8 +281,7 @@ header.topbar {
 
 /* WHEN SCROLLED – SWITCH TO DARK */
 .topbar.scrolled .nav-links a,
-.topbar.scrolled .dropdown-toggle,
-.topbar.scrolled .get-quote-btn {
+.topbar.scrolled .dropdown-toggle {
   color: var(--blue);
 }
 
@@ -302,12 +301,12 @@ header.topbar {
 }
 
 .topbar.scrolled .get-quote-btn {
-  border-color: var(--blue);
-  color: var(--blue);
+  border-color: var(--starboard);
+  color: var(--black);
 }
 
 .topbar.scrolled .get-quote-btn:hover {
-  background: var(--blue);
+  background: var(--starboard-light);
   color: white;
 }
 
@@ -327,7 +326,7 @@ header.topbar {
   }
 
   .topbar.scrolled .hamburger {
-    color: var(--blue);
+    color: var(--black);
   }
 
   .topbar .logo-text {
@@ -359,37 +358,6 @@ header.topbar {
 .location-bar.fade-out {
   opacity: 0;
 }
-
-/* header.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: auto;
-  padding: 16px 5%;
-  background: rgba(255, 255, 255, 1);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
-  z-index: 1200;
-  transform: translateY(-120%);
-  transition: transform 0.5s ease;
-}
-.topbar.visible {
-  transform: translateY(0);
-}
-
-.topbar-inner {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-img {
-  height: 50px;
-  width: auto;
-} */
 
 /* Desktop navigation */
 .nav-links {
@@ -761,7 +729,7 @@ header.topbar {
 
 .hero-content h1 {
   font-size: clamp(2.8rem, 10vw, 5rem);
-  font-weight: 900;
+  font-weight: 800;
   line-height: 1.1;
   margin: 16px 0;
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
@@ -770,6 +738,54 @@ header.topbar {
   font-size: clamp(1.1rem, 4vw, 1.5rem);
   margin: 20px 0 32px;
   opacity: 0.95;
+}
+
+/* HERO TEXT – INDIVIDUAL LINE REVEAL FROM LEFT */
+.reveal-line {
+  display: block;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-content.active .reveal-line {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered delays for each line */
+.hero-content.active .reveal-line:nth-child(1) {
+  transition-delay: 0.3s;
+}
+.hero-content.active .reveal-line:nth-child(2) {
+  transition-delay: 0.6s;
+}
+.hero-content.active .reveal-line:nth-child(3) {
+  transition-delay: 0.9s;
+}
+.hero-content.active .reveal-line:nth-child(4) {
+  transition-delay: 1.2s;
+}
+
+/* HERO BUTTONS – REVEAL FROM BOTTOM */
+.reveal-btn {
+  display: block;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-content.active .reveal-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger the two buttons after the text */
+.hero-content.active .reveal-btn:nth-child(1) {
+  transition-delay: 1.5s;
+}
+.hero-content.active .reveal-btn:nth-child(2) {
+  transition-delay: 1.7s;
 }
 
 @media (max-width: 960px) {

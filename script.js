@@ -1,12 +1,15 @@
 // Page fade-in
 window.addEventListener("load", () => document.body.classList.add("loaded"));
+window.addEventListener("load", () => {
+  document.querySelector(".hero-content").classList.add("active");
+});
 
-// Topbar on scroll
-// Navbar: translucent at top → solid white when scrolled
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-= Navbar -=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// Navbar, translucent at top -> solid white when scrolling down
 const topbar = document.getElementById("topbar");
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {           // change 100 to any value you like
+  if (window.scrollY > 75) {
     topbar.classList.add("scrolled");
   } else {
     topbar.classList.remove("scrolled");
@@ -14,7 +17,7 @@ window.addEventListener("scroll", () => {
 });
 
 const locationBar = document.getElementById("locationBar");
-
+// Not in use
 window.addEventListener("scroll", () => {
   if (window.scrollY > 120) {
     locationBar.classList.add("fade-out");
@@ -23,7 +26,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// ==================== MAIN IMAGE SLIDER ====================
+// -=-=-=-=-=-=-=-=-=-=-=- MAIN IMAGE SLIDER -=-=-=-=-=-=-=-=-=-=-=-
 const slidesContainer = document.getElementById("slides");
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
