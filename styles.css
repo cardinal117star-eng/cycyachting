@@ -104,6 +104,10 @@ h2::after {
   border-radius: 3px;
 }
 
+.orange-text {
+  color: var(--port) !important;
+}
+
 .text-highlight {
   color: var(--starboard-light);
   text-align: left;
@@ -678,6 +682,54 @@ header.topbar {
   height: 16px;
   flex-shrink: 0;
   pointer-events: none;
+}
+
+.btn-hero-green {
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* gap-2 */
+  white-space: nowrap;
+  font-weight: 600; /* font-semibold */
+  font-size: 1.125rem; /* text-lg ≈ 18px */
+  line-height: 1.2;
+  height: 56px; /* h-14 = 56px */
+  padding: 0 40px; /* px-10 ≈ 40px */
+  border-radius: 9999px; /* rounded-full */
+  background: var(--starboard); /* bg-starboard (green) */
+  color: white; /* text-white */
+  box-shadow: 0 12px 30px rgba(0, 153, 76, 0.4); /* shadow using starboard base */
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+/* Hover state */
+.btn-hero-green:hover {
+  background: var(--starboard-light); /* hover:bg-starboard-light */
+  transform: translateY(-4px); /* hover:-translate-y-1 */
+  box-shadow: 0 20px 40px rgba(0, 204, 102, 0.5);
+}
+
+/* Focus accessibility */
+.btn-hero-green:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0, 153, 76, 0.4);
+}
+
+.btn-hero-green:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Icons inside the button */
+.btn-hero-green svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
 }
 
 .btn-hero-red {
@@ -1607,6 +1659,10 @@ header.topbar {
 }
 
 .contact .contact-info b {
+  color: var(--starboard);
+}
+
+.contact .contact-info .orange-text b {
   color: var(--starboard);
 }
 
