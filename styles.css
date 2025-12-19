@@ -1953,14 +1953,14 @@ footer {
   }
 }
 
-/* BACK TO TOP BUTTON – TRANSLUCENT, ABOVE WHATSAPP */
+/* BACK TO TOP BUTTON */
 .back-to-top-btn {
   position: fixed;
-  bottom: 110px; /* 30px above WhatsApp (64px height + 16px gap) */
+  bottom: 110px;
   right: 30px;
   width: 64px;
   height: 64px;
-  background: rgba(0, 0, 0, 0.4); /* Translucent black */
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -1969,7 +1969,7 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 28px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
   cursor: pointer;
   z-index: 1000;
   opacity: 0;
