@@ -227,3 +227,20 @@ if (mobileToggle && mobileMenu) {
     }
   });
 }
+// Close mobile menu + dropdown after clicking any link
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.mobile-menu')?.classList.remove('open');
+  });
+});
+
+// Close About dropdown after clicking a dropdown link
+document.querySelectorAll('.dropdown-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    const dropdownMenu = link.closest('.dropdown-menu');
+    if (dropdownMenu) {
+      dropdownMenu.style.opacity = '0';
+      dropdownMenu.style.visibility = 'hidden';
+    }
+  });
+});
