@@ -44,24 +44,43 @@
                     <span class="dropdown-toggle">
                         About <i class="fas fa-chevron-down"></i>
                     </span>
-                    <div class="dropdown-menu about-dropdown">
+                    <div class="dropdown-menu about-dropdown compact-table">
                         <div class="dropdown-section">
                             <h4>Professional Credentials</h4>
-                            <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank" class="black">Resume
-                                (PDF)</a>
-                            <a href="./documents/MSI COC_EPearson 2025.pdf" target="_blank" class="black">Master Class 1
-                                COC</a>
-                            <a href="./documents/Eric Pearson tickets.pdf" target="_blank" class="black">Tickets &
-                                Ratings</a>
+                            <table class="compact-links">
+                                <tr>
+                                    <td><a href="./documents/Eric Pearson Resume-7.pdf" target="_blank">Resume (PDF)</a>
+                                    </td>
+                                    <td><a href="./documents/MSI COC_EPearson 2025.pdf" target="_blank">Marine Skippers Insurance
+                                            COC</a></td>
+                                </tr>
+                                <tr>
+                                    <!-- <td><a href="./documents/Eric_Pearson_Resume_Table.pdf" target="_blank">Resume Table -->
+                                            (PDF)</a></td>
+                                    <td><a href="./documents/Eric Pearson tickets.pdf" target="_blank">Tickets &
+                                            Ratings</a></td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="dropdown-section">
                             <h4>References</h4>
-                            <a href="./documents/MY Kokomo Reference.pdf" target="_blank" class="black">MY Kokomo</a>
-                            <a href="./documents/SY Happy Days Reference.pdf" target="_blank" class="black">S:Y Happy
-                                Days</a>
+                            <table class="compact-links">
+                                <tr>
+                                    <td><a href="./documents/MY Kokomo Reference.pdf" target="_blank">M/Y Kokomo</a>
+                                    </td>
+                                    <td><a href="./documents/SY Happy Days Reference.pdf" target="_blank">S/Y Happy
+                                            Days</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="./documents/SY Mystere reference letter.pdf" target="_blank">S/Y
+                                            MYSTERE</a></td>
+                                    <td><a href="./documents/MY Sea Wolf reference.pdf" target="_blank">M/Y Sea Wolf</a>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="dropdown-footer">
-                            <a href="./credentials.html" class="view-all black">View All Credentials</a>
+                            <a href="./credentials.html" class="view-all black">View All Credentials →</a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +102,7 @@
     <!-- MOBILE MENU (slides down from top) -->
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
-            <a href="#intro">Home</a>
+            <a href="#">Home</a>
             <a href="#course-details">Deliveries</a>
             <a href="#lessons">Tuition</a>
             <a href="#contact">Contact</a>
@@ -317,6 +336,9 @@
                         <a href="./documents/Eric Pearson Resume-7.pdf" target="_blank"><img
                                 src="./media/Eric_Pearson.webp" alt="Eric Pearson"></a>
                     </div>
+                    <a style="color: white;" href="./documents/Eric Pearson Resume-7.pdf" target="_blank">
+                        <p style="color: white;">Click Me For CV 📄</p>
+                    </a>
                     <h3>Eric Pearson</h3>
 
                 </div>
@@ -326,15 +348,22 @@
                         <a href="./documents/Alexander Chase Meares Yacht CV.pdf" target="_blank"><img
                                 src="./media/Alexander Chasē Mearse.webp" alt="John Smith"></a>
                     </div>
+                    <a style="color: white;" href="./documents/Alexander Chase Meares Yacht CV.pdf" target="_blank">
+                        <p style="color: white;">Click Me For CV 📄</p>
+                    </a>
                     <h3>Ali Chasē Mearse</h3>
 
                 </div>
 
                 <div class="team-card reveal-up">
                     <div class="porthole">
-                        <a href="./documents/Jordan_Pearson_CV.jpeg" target="_blank"><img
-                                src="./media/Jordan_Pearson.webp" alt="Sarah Lee"></a>
+                        <a href="./documents/JordanPearsonCV.pdf" target="_blank"><img src="./media/Jordan_Pearson.webp"
+                                alt="Sarah Lee"></a>
+
                     </div>
+                    <a style="color: white;" href="./documents/JordanPearsonCV.pdf" target="_blank">
+                        <p style="color: white;">Click Me For CV 📄</p>
+                    </a>
                     <h3>Jordan Pearson</h3>
 
                 </div>
@@ -347,8 +376,10 @@
         <div class="container">
             <h2>Contact <span class="logo-text port large">C</span>2<span
                     class="logo-text starboard large">C</span>Yachting</h2>
-            <p class="contact-info">Gold Coast, Australia<br>
-                Email: <b>eric@c2cyachting.org</b><br>Phone: <b class="orange-text">+61 409 380 487</b>
+            <p class="contact-info">
+                Gold Coast, Australia<br>
+                Email: <b>eric@c2cyachting.org</b><br>
+                Phone: <b><a href="tel:+61409380487">+61 409 380 487</a></b>
             </p>
             <form action="https://api.web3forms.com/submit" method="POST">
                 <input type="hidden" name="access_key" value="27024a43-c259-4097-b6d8-e6d0893d0bf2">
@@ -390,6 +421,10 @@
         class="whatsapp-bubble" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
+    <!-- Back to Top button -->
+    <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
     <script src="./script.js?v=2"></script>
 </body>
 

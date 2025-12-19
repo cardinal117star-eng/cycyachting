@@ -234,13 +234,39 @@ document.querySelectorAll('.mobile-menu a').forEach(link => {
   });
 });
 
-// Close About dropdown after clicking a dropdown link
-document.querySelectorAll('.dropdown-menu a').forEach(link => {
+// Close About dropdown after clicking a dropdown link (but only if opening in new tab)
+document.querySelectorAll('.dropdown-menu a[target="_blank"]').forEach(link => {
   link.addEventListener('click', () => {
     const dropdownMenu = link.closest('.dropdown-menu');
     if (dropdownMenu) {
+      // Temporarily hide it
       dropdownMenu.style.opacity = '0';
       dropdownMenu.style.visibility = 'hidden';
+      
+      // Re-enable hover after a short delay so it works again
+      setTimeout(() => {
+        dropdownMenu.style.opacity = '';
+        dropdownMenu.style.visibility = '';
+      }, 300);
     }
+  });
+});
+
+
+// Back to Top Button
+const backToTopBtn = document.getElementById('backToTopBtn');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    backToTopBtn.classList.add('visible');
+  } else {
+    backToTopBtn.classList.remove('visible');
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });

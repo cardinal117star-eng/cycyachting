@@ -138,7 +138,7 @@ h2::after {
   /* Center the logo and keep hamburger on the right */
   .topbar-inner {
     justify-content: space-between; /* keeps hamburger right */
-    padding: 0 -10%; /* consistent padding */
+    padding: 0 5%; /* consistent padding */
   }
 
   /* Optional: slightly smaller logo on mobile for breathing room */
@@ -469,11 +469,11 @@ header.topbar {
 .dropdown-section a {
   display: block;
   padding: 10px 0;
-  color: var(--blue);
+  color: var(--black) !important;
   font-size: 0.98rem;
 }
 .dropdown-section a:hover {
-  color: var(--port);
+  color: var(--port) !important;
   padding-left: 8px;
 }
 
@@ -483,12 +483,72 @@ header.topbar {
   border-top: 1px solid #eee;
   margin-top: 8px;
 }
-.view-all {
-  font-weight: 600;
-  color: var(--starboard);
+
+/* COMPACT TABLE DROPDOWN */
+/* COMPACT TABLE DROPDOWN – FIXED & RESPONSIVE */
+.dropdown-menu.compact-table {
+  min-width: 480px;
+  max-width: 95vw;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
 }
-.view-all:hover {
-  color: var(--port-light);
+
+.compact-links {
+  width: 100%;
+  table-layout: fixed; /* Critical: forces equal columns */
+  border-collapse: collapse;
+}
+
+.compact-links td {
+  padding: 10px 8px;
+  vertical-align: top;
+  width: 50%; /* Equal split */
+}
+
+.compact-links a {
+  display: block;
+  padding: 14px 16px;
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.compact-links a:hover {
+  background: rgba(227, 6, 19, 0.08);
+  color: var(--port);
+  padding-left: 20px;
+}
+
+/* 2 COLUMNS ON DESKTOP + TABLETS (above 640px) */
+@media (min-width: 641px) {
+  .compact-links td {
+    display: table-cell; /* Force 2-column layout */
+  }
+}
+
+/* STACK TO 1 COLUMN ONLY ON SMALL PHONES */
+@media (max-width: 640px) {
+  .dropdown-menu.compact-table {
+    min-width: auto;
+    width: 90vw;
+    padding: 20px;
+  }
+  .compact-links td {
+    display: block;
+    width: 100%;
+  }
+  .compact-links tr {
+    margin-bottom: 8px;
+  }
+  .compact-links a {
+    font-size: 0.98rem;
+    padding: 16px 18px;
+  }
 }
 
 .mobile-menu {
@@ -1724,6 +1784,20 @@ header.topbar {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
 
+.contact .contact-info a,
+.contact-info a[href^="tel:"] {
+  color: var(--port) !important;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.contact .contact-info a:hover,
+.contact-info a[href^="tel:"]:hover {
+  color: var(--port-light) !important; /* Brighter on hover */
+  text-decoration: underline; /* Optional underline on hover */
+}
+
 /* Mobile responsiveness */
 @media (max-width: 640px) {
   .contact {
@@ -1840,7 +1914,7 @@ footer {
     font-size: 1.8rem;
   }
 }
-/* FLOATING WHATSAPP BUBBLE */
+/* WHATSAPP BUBBLE – LOWER POSITION */
 .whatsapp-bubble {
   text-decoration: none;
   position: fixed;
@@ -1848,7 +1922,7 @@ footer {
   right: 30px;
   width: 64px;
   height: 64px;
-  background: #25d366; /* Official WhatsApp green */
+  background: #25d366;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -1864,10 +1938,9 @@ footer {
 .whatsapp-bubble:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  background: #128c7e; /* Darker green on hover */
+  background: #128c7e;
 }
 
-/* Subtle pulse animation */
 @keyframes pulse {
   0% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
@@ -1880,13 +1953,55 @@ footer {
   }
 }
 
-/* Mobile – slightly smaller */
+/* BACK TO TOP BUTTON – TRANSLUCENT, ABOVE WHATSAPP */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 110px; /* 30px above WhatsApp (64px height + 16px gap) */
+  right: 30px;
+  width: 64px;
+  height: 64px;
+  background: rgba(0, 0, 0, 0.4); /* Translucent black */
+  backdrop-filter: blur(8px);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile – smaller & stacked */
 @media (max-width: 640px) {
   .whatsapp-bubble {
     width: 56px;
     height: 56px;
     font-size: 32px;
     bottom: 20px;
+    right: 20px;
+  }
+  .back-to-top-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    bottom: 90px; /* Above WhatsApp with gap */
     right: 20px;
   }
 }
