@@ -255,7 +255,6 @@ document.querySelectorAll('.dropdown-menu a[target="_blank"]').forEach(link => {
 
 // Back to Top Button
 const backToTopBtn = document.getElementById('backToTopBtn');
-
 window.addEventListener('scroll', () => {
   if (window.scrollY > 400) {
     backToTopBtn.classList.add('visible');
@@ -264,7 +263,8 @@ window.addEventListener('scroll', () => {
   }
 });
 
-backToTopBtn.addEventListener('click', () => {
+backToTopBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
