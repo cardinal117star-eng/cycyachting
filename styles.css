@@ -3,6 +3,8 @@
   --blue: #062f4f;
   --blue-light: #0d4f7c;
   --light-blue: #70a2c5;
+  --orange: #F86302;
+  --orange-light: #ff8200;
   --silver: #c0c0c0;
   --silver-dark: #2d3e50;
   --white: #ffffff;
@@ -12,10 +14,15 @@
   --max-width: 1100px;
 
   /* Nautical port & starboard logo */
-  --port: #e30613;
+  /* --port: #e30613;
   --port-light: #ff2b38;
   --starboard: #00994c;
-  --starboard-light: #00cc66;
+  --starboard-light: #00cc66; */
+  /* New Navy and orange colors */
+  --port: #F86302;
+  --port-light: #ff8200;
+  --starboard: #1273b4;
+  --starboard-light: #0d4f7c;
   --black: #000000;
 }
 
@@ -485,11 +492,10 @@ header.topbar {
 }
 
 /* COMPACT TABLE DROPDOWN */
-/* COMPACT TABLE DROPDOWN – FIXED & RESPONSIVE */
 .dropdown-menu.compact-table {
   min-width: 480px;
   max-width: 95vw;
-  padding: 24px;
+  padding: 5px;
   background: white;
   border-radius: 16px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
@@ -497,14 +503,20 @@ header.topbar {
 
 .compact-links {
   width: 100%;
-  table-layout: fixed; /* Critical: forces equal columns */
+  table-layout: fixed;
   border-collapse: collapse;
 }
 
 .compact-links td {
-  padding: 10px 8px;
+  padding: 5px 8px;
   vertical-align: top;
-  width: 50%; /* Equal split */
+  width: 50%;
+}
+
+.compact-links th {
+  padding: 5px 8px;
+  vertical-align: top;
+  width: 50%;
 }
 
 .compact-links a {
@@ -730,10 +742,10 @@ header.topbar {
   margin-top: 20px; /* Added margin to push it down on mobile */
 }
 
-/* Hover + Focus states */
+/* Hover & Focus states */
 .btn-modern-outline:hover {
   background: white;
-  color: var(--blue); /* dark blue text when filled */
+  color: var(--blue); 
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
 }
@@ -763,17 +775,17 @@ header.topbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* gap-2 */
+  gap: 10px;
   white-space: nowrap;
-  font-weight: 600; /* font-semibold */
-  font-size: 1.125rem; /* text-lg ≈ 18px */
+  font-weight: 600; 
+  font-size: 1.125rem;
   line-height: 1.2;
-  height: 56px; /* h-14 = 56px */
-  padding: 0 40px; /* px-10 ≈ 40px */
-  border-radius: 9999px; /* rounded-full */
-  background: var(--starboard); /* bg-starboard (green) */
-  color: white; /* text-white */
-  box-shadow: 0 12px 30px rgba(0, 153, 76, 0.4); /* shadow using starboard base */
+  height: 56px; 
+  padding: 0 40px; 
+  border-radius: 9999px;
+  background: var(--starboard); 
+  color: white;
+  box-shadow: 0 12px 30px rgba(3, 55, 150, 0.4); 
   text-decoration: none;
   cursor: pointer;
   transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
@@ -782,9 +794,9 @@ header.topbar {
 
 /* Hover state */
 .btn-hero-green:hover {
-  background: var(--starboard-light); /* hover:bg-starboard-light */
-  transform: translateY(-4px); /* hover:-translate-y-1 */
-  box-shadow: 0 20px 40px rgba(0, 204, 102, 0.5);
+  background: var(--starboard-light);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(3, 55, 150, 0.5);
 }
 
 /* Focus accessibility */
@@ -810,17 +822,17 @@ header.topbar {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px; /* gap-2 */
+  gap: 10px;
   white-space: nowrap;
-  font-weight: 600; /* font-semibold */
-  font-size: 1.125rem; /* text-lg ≈ 18px */
+  font-weight: 600;
+  font-size: 1.125rem;
   line-height: 1.2;
-  height: 56px; /* h-14 = 56px */
-  padding: 0 40px; /* px-10 ≈ 40px */
-  border-radius: 9999px; /* rounded-full */
-  background: var(--port); /* bg-port */
-  color: white; /* text-white */
-  box-shadow: 0 12px 30px rgba(227, 6, 19, 0.4); /* shadow-button */
+  height: 56px;
+  padding: 0 40px;
+  border-radius: 9999px;
+  background: var(--port);
+  color: white;
+  box-shadow: 0 12px 30px rgba(248, 91, 0, 0.4);
   text-decoration: none;
   cursor: pointer;
   transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
@@ -829,9 +841,9 @@ header.topbar {
 
 /* Hover state */
 .btn-hero-red:hover {
-  background: var(--port-light); /* hover:bg-port-light */
-  transform: translateY(-4px); /* hover:-translate-y-1 */
-  box-shadow: 0 20px 40px rgba(227, 6, 19, 0.5);
+  background: var(--port-light);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(248, 91, 0, 0.5);
 }
 
 /* Focus accessibility */
