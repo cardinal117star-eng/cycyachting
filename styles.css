@@ -106,7 +106,7 @@ h2::after {
   display: block;
   width: 120px;
   height: 6px;
-  background: linear-gradient(to right, var(--port), var(--starboard));
+  background: var(--port);
   margin: 20px auto 0;
   border-radius: 3px;
 }
@@ -125,7 +125,7 @@ h2::after {
   text-align: left;
   align-self: flex-start;
 }
-/* Logo text styles – Port & Starboard variants */
+/* Logo text style */
 .logo-text {
   display: inline-flex;
   align-items: center;
@@ -326,12 +326,12 @@ header.topbar {
 }
 
 .topbar.scrolled .get-quote-btn {
-  border-color: var(--starboard);
+  border-color: var(--port);
   color: var(--black);
 }
 
 .topbar.scrolled .get-quote-btn:hover {
-  background: var(--starboard-light);
+  background: var(--port);
   color: white;
 }
 
@@ -719,7 +719,7 @@ header.topbar {
   color: var(--port);
 }
 
-/* Perfect Tailwind-like white-outline button (used for "Get a Quote" and any future buttons) */
+/* Clear button */
 .btn-modern-outline {
   display: inline-flex;
   align-items: center;
@@ -744,10 +744,11 @@ header.topbar {
 
 /* Hover & Focus states */
 .btn-modern-outline:hover {
-  background: white;
-  color: var(--blue); 
+  background: var(--port-light);
+  color: var(--white); 
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+  border-color: var(--port-light);
 }
 
 .btn-modern-outline:focus-visible {
@@ -1148,7 +1149,7 @@ header.topbar {
 
 .intro-split ul li::before {
   content: "✔";
-  color: var(--starboard);
+  color: var(--port);
   font-weight: 700;
   position: absolute;
   left: 0;
@@ -1241,7 +1242,7 @@ header.topbar {
 }
 .service-card i {
   font-size: 4rem;
-  color: var(--starboard);
+  color: var(--port);
   margin-bottom: 28px;
 }
 .service-card h3 {
@@ -1390,7 +1391,7 @@ header.topbar {
 }
 
 .get-quote-btn:hover {
-  background: var(--starboard); /* No background change */
+  background: var(--port); /* No background change */
   text-decoration: solid;
   color: white !important; /* Change text color to port red */
   border: 2px solid transparent; /* Remove black outline on hover */
@@ -1720,7 +1721,7 @@ header.topbar {
 }
 .download-btn {
   margin-top: 16px;
-  color: var(--starboard);
+  color: var(--port);
   font-weight: 600;
 }
 
@@ -1745,7 +1746,7 @@ header.topbar {
 }
 
 .contact .contact-info b {
-  color: var(--starboard);
+  color: var(--port);
 }
 
 .contact .contact-info .orange-text b {
