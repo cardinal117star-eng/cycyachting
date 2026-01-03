@@ -2032,61 +2032,9 @@ footer {
   }
 }
 
+
+
 /* Move hero buttons lower down on mobile */
-
-@media (min-width: 1600px) {
-  .hero-content h1 {
-    font-size: clamp(
-      3rem,
-      3vw,
-      4.5rem
-    ) !important; /* Reduced from 5vw to 3vw */
-    max-width: 80%; /* Prevent text from stretching too far */
-  }
-
-  .hero {
-    padding-left: 15% !important; /* More left padding on huge screens */
-    padding-right: 15% !important;
-  }
-
-  .hero-content {
-    max-width: 1000px; /* Limit width on huge screens */
-  }
-}
-
-/* Extra large screens */
-@media (min-width: 2000px) {
-  .hero-content h1 {
-    font-size: clamp(2.8rem, 4vw, 4.8rem) !important; /* Even smaller vw */
-    margin-top: 20%;
-    top: 0px;
-    position: absolute;
-  }
-}
-
-/* Also fix the default hero h1 size */
-.hero-content h1 {
-  font-size: clamp(2.8rem, 4vw, 4.8rem); /* Reduced from 5vw to 4vw */
-}
-
-/* And fix the 1600px breakpoint that's already in your CSS */
-@media (max-width: 1600px) and (min-width: 9600px) {
-  .hero-content h1 {
-    font-size: clamp(2.2rem, 3.2vw, 3.2rem) !important; /* Smaller */
-    margin-top: 25%;
-    top: 0px;
-    position: absolute;
-  }
-  .logo-text {
-    font-size: clamp(2.5rem, 3.5vw, 3rem);
-    left: 0px;
-  }
-
-  .topbar-inner {
-    left: -10px !important;
-    margin-left: 30px !important;
-  }
-}
 
 /* feeeeeeeeeeee */
 @media (max-width: 960px) {
@@ -2110,7 +2058,7 @@ footer {
   .hero-content h1 {
     font-size: clamp(1.8rem, 4.8vw, 2.8rem);
     line-height: 1.15;
-    margin-top: 18%;
+    margin-top: 20%;
     top: 0px;
     position: absolute;
   }
@@ -2166,7 +2114,7 @@ footer {
 
   .topbar-inner {
     left: -40px !important;
-    margin-left: -18px !important;
+    margin-left: -10px !important;
   }
 
   .hamburger {
@@ -2283,7 +2231,7 @@ footer {
   }
 }
 
-@media (max-width: 430px) and (min-width: 416px) {
+@media (max-width: 430px) and (min-width: 416px){
   .topbar .logo-text {
     letter-spacing: 1.2px;
     margin-bottom: 0px;
@@ -2382,7 +2330,7 @@ footer {
   }
 
   .hero {
-    padding: 40px 5% 100px 5% !important;
+padding: 40px 5% 100px 5% !important;
     min-width: 100%;
     justify-content: flex-start;
   }
