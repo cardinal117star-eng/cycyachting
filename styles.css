@@ -2082,6 +2082,13 @@ footer {
   }
 }
 
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 6.6vw, 3.8rem);
+    line-height: 1.15;
+  }
+}
+
 @media (max-width: 560px) {
   .topbar .logo-text {
     font-size: clamp(2.6rem, 5.4vw, 3.4rem);
@@ -2089,7 +2096,7 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: clamp(2.6rem, 7vw, 4.2rem);
+    font-size: clamp(2.4rem, 6.8vw, 4rem);
     line-height: 1.15;
   }
 
@@ -2103,7 +2110,7 @@ footer {
   }
 
   .hero {
-    padding-left: 10%;
+    padding-left: 12%;
     padding-right: 5%;
   }
 
