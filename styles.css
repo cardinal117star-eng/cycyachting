@@ -2032,9 +2032,39 @@ footer {
   }
 }
 
-
-
 /* Move hero buttons lower down on mobile */
+/* ONE consistent rule for all desktop sizes */
+@media (min-width: 961px) {
+  .topbar .logo-text {
+    text-align: left;
+    margin-left: 0;
+    font-size: clamp(2.5rem, calc(2.2vw + 0.8rem), 3.5rem);
+  }
+
+  .hero-content h1 {
+    font-size: clamp(1.6rem, calc(2.4vw + 0.2rem), 2.9rem) !important;
+    line-height: 1.15;
+    margin-top: 10%;
+    top: 0px;
+    position: absolute;
+  }
+/* 
+  .topbar-inner {
+    justify-content: space-between;
+    padding: 0 5%;
+    left: 0 !important;
+    margin-left: 0 !important;
+  } */
+
+  .hero-buttons {
+    position: absolute;
+    bottom: 40px;
+  }
+
+  .hamburger {
+    display: none; /* Hide hamburger on desktop */
+  }
+}
 
 /* feeeeeeeeeeee */
 @media (max-width: 960px) {
@@ -2045,8 +2075,9 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-size: clamp(2.5rem, 3.2vw, 3.5rem) !important;
     line-height: 1.15;
+    margin-left: 18px;
   }
 
   .hero {
@@ -2056,9 +2087,9 @@ footer {
   }
 
   .hero-content h1 {
-    font-size: clamp(1.8rem, 4.8vw, 2.8rem);
+    font-size: clamp(2rem, 3vw, 3.2rem) !important;
     line-height: 1.15;
-    margin-top: 20%;
+    margin-top: 16%;
     top: 0px;
     position: absolute;
   }
@@ -2069,7 +2100,7 @@ footer {
   }
 
   .topbar-inner {
-    left: -20px !important;
+    left: -10px !important;
     margin-left: -10px !important;
   }
 
@@ -2231,7 +2262,7 @@ footer {
   }
 }
 
-@media (max-width: 430px) and (min-width: 416px){
+@media (max-width: 430px) and (min-width: 416px) {
   .topbar .logo-text {
     letter-spacing: 1.2px;
     margin-bottom: 0px;
@@ -2330,7 +2361,7 @@ footer {
   }
 
   .hero {
-padding: 40px 5% 100px 5% !important;
+    padding: 40px 5% 100px 5% !important;
     min-width: 100%;
     justify-content: flex-start;
   }
