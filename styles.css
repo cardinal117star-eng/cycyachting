@@ -1544,7 +1544,7 @@ header.topbar {
 .testimonials-box {
   max-width: 960px;
   margin: 60px auto 0;
-  background: var(--bg-light);
+  background: #e6e6e6;
   border-radius: 20px;
   padding: 60px 40px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
